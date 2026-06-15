@@ -2,7 +2,7 @@ package com.healthclaims;
 
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
-//COntroller file that helps with API
+//test
 // @RestController tells Spring: this class handles HTTP requests.
 @RestController
 public class ClaimsController {
