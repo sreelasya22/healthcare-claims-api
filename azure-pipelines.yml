@@ -1,0 +1,45 @@
+# TRIGGER: which branches automatically trigger this pipeline when code is pushed
+trigger:
+  branches:
+    include:
+      - main        # pushing to main triggers the pipeline
+      - dev         # pushing to dev triggers the pipeline
+      - feature/*   # any branch starting with 'feature/' also triggers it
+
+# POOL: what kind of server (called an 'agent') runs your pipeline
+# ubuntu-latest = a fresh Linux virtual machine provided by Microsoft (free)
+pool:
+  vmImage: 'ubuntu-latest'
+
+# VARIABLES: reusable values
+variables:
+  JAVA_VERSION: '17'
+
+# STAGES: the pipeline is divided into stages (Build → Deploy Dev → Deploy Cert)
+stages:
+  # STAGE 1: BUILD
+  - stage: Build
+    displayName: 'Build and Test' # This is the label shown in Azure DevOps UI
+    jobs:
+      - job: BuildJob
+        steps:
+          # Step 1: Install Java 17 on the agent machine
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: '17'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
+
+          # Step 2: Run unit tests
+          - script: mvn clean test
+            displayName: 'Run Unit Tests'
+
+          # Step 3: Package the app into a JAR file
+          - script: mvn package -DskipTests
+            displayName: 'Package JAR'
+
+          # Step 4: Save the JAR file as a pipeline artifact (so Deploy stages can use it)
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: 'target'
+              artifactName: 'claims-api-jar'
