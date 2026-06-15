@@ -58,7 +58,7 @@ stages:
               steps:
                 - task: AzureWebApp@1
                   inputs:
-                    azureSubscription: 'YOUR-SERVICE-CONNECTION'
+                    azureSubscription: 'azure-rm-connection'
                     appName: 'claims-api-dev'
                     package: '$(Pipeline.Workspace)/claims-api-jar/*.jar'
 
