@@ -59,7 +59,7 @@ stages:
                 - task: AzureWebApp@1
                   inputs:
                     azureSubscription: 'azure-rm-connection'
-                    appName: 'claims-api-dev'
+                    appName: '$(APP_NAME)-dev'
                     package: '$(Pipeline.Workspace)/claims-api-jar/*.jar'
 
   # STAGE 3: DEPLOY TO CERT
@@ -78,5 +78,5 @@ stages:
                 - task: AzureWebApp@1
                   inputs:
                     azureSubscription: 'azure-rm-connection'
-                    appName: 'claims-api-cert'
+                    appName: '$(APP_NAME)-cert'
                     package: '$(Pipeline.Workspace)/claims-api-jar/*.jar'
