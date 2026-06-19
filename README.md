@@ -1,6 +1,6 @@
 # Healthcare Claims Status API — Azure DevOps CI/CD Pipeline
 
-[![Build Status](https://dev.azure.com/cslpin5/healthcare-claims-api/_apis/build/status/sreelasya22.healthcare-claims-api?branchName=dev)](https://dev.azure.com/cslpin5/healthcare-claims-api/_build/latest?definitionId=1&branchName=main)
+[![Build Status](https://dev.azure.com/cslpin5/healthcare-claims-api/_apis/build/status/sreelasya22.healthcare-claims-api?branchName=main)](https://dev.azure.com/cslpin5/healthcare-claims-api/_build/latest?definitionId=1&branchName=main)
 
 ## What This Project Does
 A Java Spring Boot REST API that simulates a healthcare insurance claims
