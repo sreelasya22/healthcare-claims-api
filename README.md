@@ -1,6 +1,5 @@
 # Healthcare Claims Status API — Azure DevOps CI/CD Pipeline
 
-[![Build Status - Main](https://dev.azure.com/cslpin5/healthcare-claims-api/_apis/build/status/sreelasya22.healthcare-claims-api?branchName=main)](https://dev.azure.com/cslpin5/healthcare-claims-api/_build/latest?definitionId=1&branchName=main)
 [![Build Status - Dev](https://dev.azure.com/cslpin5/healthcare-claims-api/_apis/build/status/sreelasya22.healthcare-claims-api?branchName=dev)](https://dev.azure.com/cslpin5/healthcare-claims-api/_build/latest?definitionId=1&branchName=dev)
 
 ## What This Project Does
