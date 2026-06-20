@@ -66,8 +66,8 @@ stages:
   # This stage ONLY runs when code is merged to the 'main' branch
   - stage: DeployCert
     displayName: 'Deploy to Certification'
-    dependsOn: DeployDev
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+    dependsOn: Build
+    condition: and(succeeded('Build'), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
     jobs:
       - deployment: DeployCert
         environment: 'Certification'   # approval gate is on this environment
