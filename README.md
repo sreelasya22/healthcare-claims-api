@@ -50,4 +50,4 @@ mvn spring-boot:run
 
 ### Terraform - Infrastructure plan
 
-![Terraform plan](terraform plan - output.png)
+![Terraform plan](terraform_plan-output.png)
