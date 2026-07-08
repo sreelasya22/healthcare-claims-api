@@ -42,3 +42,12 @@ GitHub (source code)
 ```bash
 mvn spring-boot:run
 # Visit http://localhost:8080/health
+
+## Screenshots
+### Docker - API running in container
+
+![Docker Health](Docker-health-endpoint.png)
+
+### Terraform - Infrastructure plan
+
+![Terraform plan](terraform plan - output.png)
